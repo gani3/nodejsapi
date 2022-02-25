@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const {
-  koneksi
-} = require('./config/koneksi.js');
 const port = 8080;
 
+// membuat filer router berjalan sebagai route dari node js
+const router = require('./config/router');
+router(app);
 
 
 // parse aplikasi yang berformat js ke json
@@ -14,10 +14,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+// membuat akses ke web server
 app.listen(port, () => {
   console.log(`Silahkan akses ke http://localhost:${port}`);
-});
-
-app.get('path', (req, res) => {
-
 });

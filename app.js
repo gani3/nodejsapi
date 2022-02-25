@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const {
+  koneksi
+} = require('./config/koneksi.js');
 const port = 8080;
 
 

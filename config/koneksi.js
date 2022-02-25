@@ -4,7 +4,7 @@ const mysql = require('mysql');
 const koneksi = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'belajar_nodejs_api',
+  password: '',
   database: 'belajar_nodejs_api'
 });
 

@@ -14,5 +14,8 @@ module.exports = function (app) {
   //menghapus data menggunakan api
   app.route('/edit').put(json.editData);
 
+  //menghapus data menggunakan api
+  app.route('/hapus').delete(json.hapusData);
+
 
 }

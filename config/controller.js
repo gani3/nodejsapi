@@ -52,12 +52,23 @@ exports.editData = function (req, res) {
   var nim = req.body.nim;
   var nama = req.body.nama;
   var jurusan = req.body.jurusan;
-  koneksi.query(`UPDATE mahasiswa SET nim = ${nim},nama="${nama}",jurusan="${jurusan}" WHERE idmahasiswa =${idmahasiswa}`),
+  koneksi.query(`UPDATE mahasiswa SET nim = ${nim},nama="${nama}",jurusan="${jurusan}" WHERE idmahasiswa =${idmahasiswa}`,
     function (error, rows, field) {
       if (error) {
         console.log(error);
       } else {
-        respon.ok('Data berhasil di hapus', res);
+        respon.ok('Data berhasil di Update', res);
       }
-    }
+    });
+}
+exports.hapusData = function (req, res) {
+  const idmahasiswa = req.body.idmahasiswa;
+  koneksi.query(`DELETE FROM mahasiswa WHERE idmahasiswa=${idmahasiswa}`,
+    function (error, rows, field) {
+      if (error) {
+        console.log(error);
+      } else {
+        respon.ok('Data berhasil Dihapus', res);
+      }
+    });
 }

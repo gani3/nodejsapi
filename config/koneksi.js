@@ -14,6 +14,4 @@ koneksi.connect((err) => {
   console.log('koneksi berhasil ke mysql');
 });
 
-module.exports = {
-  koneksi
-}
+module.exports = koneksi;

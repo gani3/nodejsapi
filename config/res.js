@@ -2,7 +2,7 @@
 
 // mengirim status apabila api berhasil dijalankan
 exports.ok = function (values, res) {
-  const data = {
+  var data = {
     'status': 200,
     'values': values
   };

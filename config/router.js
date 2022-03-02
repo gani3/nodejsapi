@@ -17,5 +17,8 @@ module.exports = function (app) {
   //menghapus data menggunakan api
   app.route('/hapus').delete(json.hapusData);
 
+  //menampilkan nested json
+  app.route('/nested').get(json.tampilGroup);
+
 
 }

@@ -72,3 +72,17 @@ exports.hapusData = function (req, res) {
       }
     });
 }
+
+
+// menampilkan matakuliah relasi join tabel 
+
+exports.tampilGroup = function (req, res) {
+  koneksi.query(`SELECT mhs.idmahasiswa,mhs.nim,mhs.nama,mhs.jurusan,mt.matakuliah,mt.sks FROM krs JOIN matakuliah as mt JOIN mahasiswa as mhs WHERE krs.idmahasiswa=mhs.idmahasiswa AND krs.idmatakuliah = mt.idmatakuliah ORDER BY mhs.idmahasiswa;`,
+    function (error, rows, field) {
+      if (error) {
+        console.log(error);
+      } else {
+        respon.oknested(rows, res);
+      }
+    });
+}
